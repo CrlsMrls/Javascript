@@ -35,7 +35,3 @@ if( emtpyObject != null ) console.log('correct! only because both are the same t
 
 // good
 if( emtpyObject !== null ) console.log('always use === and !== to be safe');
-
-
-
-
