@@ -1,6 +1,6 @@
 // Avoid JavaScript implicitly typecasts variables when comparing
 
-// == and != only work when compared operands are of the same type
+// == and != only work as expected when compared operands are of the same type
 // always use === and !==
 
 
