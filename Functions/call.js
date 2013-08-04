@@ -11,11 +11,9 @@ var english = {
 	morning: 'good morning'
 };
 
-var german = {};
-german.hi = 'hallo';
-german.morning = 'guten Morgen'
-
 var morningGreetings = function (name) {
+
+	// 'this' access to actual scope on runtime 
 	console.log( this.hi + ' ' + name + '! ' + this.morning);
 };
 
@@ -25,9 +23,4 @@ morningGreetings('Adam'); // => undefined Adam! undefined
 // defined scope
 morningGreetings.call(english, 'Johan'); // => hello Johan! good morning
 morningGreetings.call(spanish, 'Juan'); // => hola Juan! buenos días
-morningGreetings.call(german,  'Johannes'); // => hallo Johannes! guten Morgen
-
-
-
-
 
