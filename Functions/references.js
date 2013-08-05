@@ -43,3 +43,48 @@ myArray[0]('from array'); // => Hi! from array
 console.log(myArray[1](3,2)); // => 5
 console.log(myArray[2](3,2)); // => 1
 
+
+
+// functions can be passed as arguments to functions
+
+var taskManager = {
+		fifo : [],
+
+		// callback is a function and a parameter
+	 	addTask : function(callback) { 
+
+	 		// make sure callback is a function
+	 		if ( typeof callback === 'function') {
+	 			this.fifo.push(callback);
+	 		}
+	 	},
+	 	executeTasks : function() {
+	 		var i = 0;
+	 		for (var i = 0; i < this.fifo.length; i++) {
+
+	 			// execute them all
+	 			this.fifo[i]();
+	 		};
+	 	}
+}
+
+
+var click = function(button) { console.log('clicking ' + button ); }
+
+var type = function(text) { console.log('typing ' + text ); }
+
+// these functions are passed as an argument to addTask function
+taskManager.addTask( click('here ') );
+taskManager.addTask( click('there') );
+taskManager.addTask( type('1st name') );
+taskManager.addTask( type('lastname') );
+taskManager.addTask( click('submit!') );
+
+taskManager.executeTasks(); 
+/* => 	clicking here
+		clicking there
+		typing 1st name
+		typing lastname
+		clicking submit! 
+*/
+
