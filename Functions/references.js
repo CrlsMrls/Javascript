@@ -37,7 +37,7 @@ var myObject = {
 // method invocation
 myObject.talk('from method'); // => talking! from method
 
-// function declaration stored in variable
+// copying a reference to the function to a global reference 
 var reference = sayHi;
 reference('from reference'); // => Hi! from reference
 
