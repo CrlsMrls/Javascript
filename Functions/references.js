@@ -37,8 +37,26 @@ var myObject = {
 // method invocation
 myObject.talk('from method'); // => talking! from method
 
-// function stored in variable
+// function declaration stored in variable
 var reference = sayHi;
 reference('from reference'); // => Hi! from reference
 
+// store function in arrays
+var myArray = [sayHi, show, myObject.talk];
+myArray[0]('from array'); // => Hi! from array
+
+// fuction with another function as parameter
+var executeThis = function(text, fn) {
+	if ( typeof fn === 'function' ) {
+		fn(text);
+	}
+}
+
+// function variable as parameter
+executeThis('from execute', sayHi); // => Hi! from execute
+
+// function declaration as parameter
+executeThis('JS', function(values) {
+	console.log("having fun with  ... " + values);
+}); // => having fun with ... JS
 
