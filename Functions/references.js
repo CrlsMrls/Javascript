@@ -18,12 +18,12 @@ function sayHi(text) {
 // function expression (a.k.a. anonymous function)
 var click = function(button) { 
 	console.log('clicking ' + button ); 
-}
+};
 
 // named function expressions
 var show = function showFromInside() { 
 	console.log('typeof showFromInside: ' + typeof showFromInside );  
-}
+};
 
 // the name of a named function expression can be referenced ONLY from inside its body
 console.log('typeof showFromInside: ' + typeof showFromInside );  // => typeof showFromInside: undefined
@@ -50,7 +50,7 @@ var executeThis = function(text, fn) {
 	if ( typeof fn === 'function' ) {
 		fn(text);
 	}
-}
+};
 
 // function variable as parameter
 executeThis('from execute', sayHi); // => Hi! from execute

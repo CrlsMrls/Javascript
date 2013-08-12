@@ -4,7 +4,7 @@
 var spanish = {
 	hi: 'hola',
 	morning: 'buenos días'
-}
+};
 
 var english = {
 	hi: 'hello',

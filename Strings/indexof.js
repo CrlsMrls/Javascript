@@ -26,7 +26,7 @@ var howManyTimes = function(text, search){
 	} while(position !== -1);
 
 	return times;
-}
+};
 
 console.log('"text" found ' + howManyTimes(paragraph,'text') + ' times'); // => "text" found 4 times
 
