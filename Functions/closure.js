@@ -30,7 +30,7 @@ var attachClickEvent = function(element, a){
 	element.onclick = function() { console.log('cliked! ' + a); };
 }
 
-// god
+// good
 var show = function show(a){
 	return function() { console.log('cliked! ' + a); };
 }
