@@ -12,7 +12,7 @@ function vehicle(initalSpeed) {
 		console.log('.');
 		if (speed<objective) setTimeout(accelarate, 100);
 		else console.log('speed ' + speed + ' achived!')
-	}
+	};
 
 	// returning this object, it associates the function with object instance methods
 	return {

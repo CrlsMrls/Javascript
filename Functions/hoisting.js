@@ -10,11 +10,11 @@ function printPosition() { console.log('2nd!'); }
 
 
 // instead, use function expressions
-var printColor = function() { console.log('red'); }
+var printColor = function() { console.log('red'); };
 
 printColor(); // => red
 
-printColor = function() { console.log('black'); }
+printColor = function() { console.log('black'); };
 
 printColor(); // => black
 

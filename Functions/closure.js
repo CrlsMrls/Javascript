@@ -21,25 +21,34 @@ container = null;
 fun(); // => innerScopeVar: 123
 
 
+
 // careful! closures could create circular references
 
 // bad
-var attachClickEvent = function(element, a){
+var attachClickEvent = function(element, text){
 
-	// 'element' keeps a reference to 'element' and 'a'. A cycle that won't be cleaned up by garbage collection
-	element.onclick = function() { console.log('cliked! ' + a); };
-}
+	// 'element' keeps a reference to 'element' and 'text'. The cycle won't be cleaned up by garbage collection
+	element.onclick = function() { console.log('cliked! ' + text); };
+};
 
 // good
+<<<<<<< HEAD
 var show = function show(a){
 	return function() { console.log('cliked! ' + a); };
 }
 var attachClickEvent = function(element, a){
 	element.onclick = show(a);
 }
+=======
+var show = function show(text){
+	return function() { console.log('cliked! ' + text); };
+};
+var attachClickEvent = function(element, text){
+	element.onclick = show(text);
+};
+>>>>>>> ee339f698aa76c7cde9cfc575bfe60905d34e0dc
 
 var button = {};
-var text = 'text';
-attachClickEvent(button,text);
-button.onclick(); // => cliked! text
+attachClickEvent(button, 'message');
+button.onclick(); // => cliked! message
 
